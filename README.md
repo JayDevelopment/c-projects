@@ -1,6 +1,6 @@
 ## C Projects
 
-Welcome to my repository of daily C projects! This is a living archive where I experiment with new ideas, learn more about C programming, and build small utility programs. New projects are added regularly—sometimes daily—so check back often for fresh content.
+Welcome to my repository of C projects! This is a living archive where I experiment with new ideas, learn more about C programming, and build small utility programs. New projects are added regularly—sometimes daily—so check back often for fresh content.
 
 ## Overview
 
