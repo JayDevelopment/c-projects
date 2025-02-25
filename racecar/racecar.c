@@ -7,12 +7,12 @@
 struct Race {
   int numberOfLoops;
   int currentLoop;
-  char firstPlaceDriverName[10];
-  char firstPlaceRaceCarColor[10];
+  char firstPlaceDriverName[20];
+  char firstPlaceRaceCarColor[20];
 };
 struct RaceCar {
-  char driverName[50];
-  char raceCarColor[50];
+  char driverName[20];
+  char raceCarColor[20];
   int totalLapTime;
 };
 // Print functions section
@@ -42,11 +42,11 @@ void updateRaceCar(struct RaceCar* raceCar){
 }
 void updateFirstPlace(struct Race* race, struct RaceCar* raceCar1, struct RaceCar* raceCar2){
   if (raceCar1->totalLapTime <= raceCar2->totalLapTime){
-  strcpy(race->firstPlaceDriverName, raceCar2->driverName);
-  strcpy(race->firstPlaceRaceCarColor, raceCar2->raceCarColor);
+  strcpy(race->firstPlaceDriverName, raceCar1->driverName);
+  strcpy(race->firstPlaceRaceCarColor, raceCar1->raceCarColor);
 } else {
-    strcpy(race->firstPlaceDriverName, raceCar1->driverName);
-    strcpy(race->firstPlaceRaceCarColor, raceCar1->raceCarColor);
+    strcpy(race->firstPlaceDriverName, raceCar2->driverName);
+    strcpy(race->firstPlaceRaceCarColor, raceCar2->raceCarColor);
     }
 }
 void startRace(struct RaceCar* raceCar1, struct RaceCar* raceCar2){
