@@ -3,8 +3,8 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool* interactWithFlick(const char** arr, int size, int* returnSize) {
-    bool* result = malloc(size * sizeof(bool));
+char** interactWithFlick(const char** arr, int size, int* returnSize) {
+    char** result = malloc(size * sizeof(char*));
     if(!result){
         perror("malloc failed.");
         exit(EXIT_FAILURE);
@@ -15,7 +15,7 @@ bool* interactWithFlick(const char** arr, int size, int* returnSize) {
         if(strcmp(arr[i], "flick") == 0){
             flag = !flag;
         }
-        result[i] = flag;
+        result[i] = flag ? "true" : "false";
     }
     *returnSize = size;
     return result;
@@ -24,9 +24,9 @@ int main(void){
     const char* arr[] = {"flick", "switch", "flick", "switch", "flick"};
     int size = sizeof(arr) / sizeof(arr[0]);
     int returnSize;
-    bool* result = interactWithFlick(arr, size, &returnSize);
+    char** result = interactWithFlick(arr, size, &returnSize);
     for(int i = 0; i < returnSize; i++){
-        printf("%d\n", result[i]);
+        printf("%s\n", result[i]);
     }
     free(result);
     return 0;
